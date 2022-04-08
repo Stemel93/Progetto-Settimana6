@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Memory Game</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+
+
+	<div class='circle'>
+		<h2 class='titoloSocial'>I miei Social</h2>
+		<div class="condividi">
+			<i class="fa-solid fa-share-nodes"></i>
+		</div>
+		<ul>
+			<li><a href="https://www.facebook.com/mauro.b.migliorino" target="blank"><i
+						class="fa-brands fa-facebook-f"></i></a></li>
+			<li><a href="https://twitter.com/mauMigliorino93" target="blank"><i class="fa-brands fa-twitter"></i></a>
+			</li>
+			<li><a href="#" target="blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+			<li><a href="https://www.twitch.tv/stemel17" target="blank"><i class="fa-brands fa-twitch"></i></a></li>
+		</ul>
+	</div>
+
+	<div class="progressBar">
+		<div class="wrap">
+			<div class="progress-wrap">
+				<div class="progress">
+					<span class="countup"></span>
+				</div>
+				<!-- <div class='avanti'><button type='button' id='avanti'>Start!</button></div> -->
+
+
+
+
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="box">
+				<div class="numclicks">
+					<h2>Numero di click: <span id="clicks">0</span></h2>
+					<h2>Mosse: <span id="mosse">0</span></h2>
+					<h2>Punteggio: <span id="punteggio">0</span></h2>
+					<h2>Tempo: <span id="tempo">0</span> secondi</h2>
+				</div>
+				<!-- creo i div delle caselle del gioco per tutte le immagini con richiamo della funzione al click -->
+				<div class="game"></div>
+				<!-- Inserisco location.reload() per ricaricare il documento -->
+				<button id="Restart">Restart</button>
+
+			</div>
+		</div>
+	</div>
+
+	<div id="modal">
+		<div class="content">
+			<h2>Congratulazioni hai vinto totalizzando <span id=punteggioFinale>0</span> punti </h2>
+			<h2>Punti bonus Mosse: <span id="puntiMosse">0</span></h2>
+			<h2>Punti bonus Tempo: <span id="puntiTempo">0</span> </h2>
+			<p> <button class="replay">Gioca Ancora</button></p>
+		</div>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>
