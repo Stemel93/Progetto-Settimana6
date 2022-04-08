@@ -387,6 +387,7 @@ font-family: helvetica, sans-serif;
     left: -170%;
     font-size: 40px;
     color: #fff;
+    pointer-events: none;
   }
 
   @media screen and (max-height: 616px )  {
