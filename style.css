@@ -64,8 +64,9 @@ font-family: helvetica, sans-serif;
     margin-top: 20px;
     border-radius: 10px;
     padding: 10px 10px;
-    background: rgb(15, 15, 15);
-    color: #fff;
+    background: #fff;
+    color: #cb8307;
+    border: 2px solid #cb8307;
     font-size: 20px;
     font-weight: bold;
     border: none;
@@ -122,6 +123,61 @@ font-family: helvetica, sans-serif;
     left: 25%;
     bottom: 10%;
     
+  }
+
+  #modalStart {
+    /* display: none; */
+    /* padding: 200px 400px; */
+
+    width: 70em;
+    height: 50em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #cb8307;
+    border: black 3px solid;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position:absolute;
+    left: 25%;
+    bottom: 10%;
+    z-index: 10;
+    display: none;
+    
+  }
+
+  #modalLost {
+    width: 70em;
+    height: 50em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #cb8307;
+    border: black 3px solid;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position:absolute;
+    left: 25%;
+    bottom: 10%;
+    z-index: 10;
+    display: none;
+  }
+
+  #modalStart button {
+    margin-top: 10px ;
+    font-family: 'Montserrat Alternates', sans-serif;
+    float: left;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 10px 10px;
+    background: #fff;
+    color: #cb8307;
+    border: 2px solid #cb8307;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    pointer-events: all;
   }
 
   .content {

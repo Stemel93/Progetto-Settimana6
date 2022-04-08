@@ -40,10 +40,13 @@ $(document).ready(function () {
   
     $('#avanti').on('click', () =>{
       
-              
+      
       $('.progressBar').css({display: 'none'});
       $('.circle').css({display: 'none'});
+      $('#modalStart').fadeIn('slow');
+      $('#modalStart').css({display: 'flex'});
       $('.container').fadeIn('slow');
+      
       
       
 
@@ -60,7 +63,7 @@ $(document).ready(function () {
            
       });    
       
-
+      
      
 
 
@@ -108,6 +111,7 @@ $(document).ready(function () {
   let punteggioMosse = esatto - mosse
   let punteggioTempo = esatto - timer
   let punteggioFinal = punteggio + punteggioMosse + punteggioTempo
+  var corsa = false;
 
 
   function startTimer() {
@@ -116,13 +120,51 @@ $(document).ready(function () {
 
   }
 
+  function startTimerCorsa() {
+    $('#tempo').html(timer)
+    timer--;
+    if(corsa === true && timer <= 0) {
+      $('#tempo').html('0')
+      $(images).css('pointer-events', 'none')
+      $('#modalLost').fadeIn('slow')
+      $('#modalLost').css({display: 'flex'})
+      $(".punteggio").html(punteggio);
+        $('.puntiMosse').html(punteggioMosse);
+        $('.puntiTempo').html(punteggioTempo);
+        $('.punteggioFinale').html(punteggioFinal);
+
+      return clearInterval(clockCorsa)
+      
+    }
+
+  }
+
+  $('#normalCorsa').click(function () {
+    corsa = true
+    timer = 31
+    $('#tempo').html('30')
+    $('#modalStart').slideUp('slow');
+  })
+
+  $('#normal').click(function () {
+    corsa = false
+    timer = 0
+    $('#modalStart').slideUp('slow');
+  })
+  
 
   $(images).click(function () {
+    
 
-    if (timer <= 0) {
+    if (corsa === false && timer <= 0) {
       timer = 1
       clock = setInterval(startTimer, 1000)
+    } else if (corsa === true && timer >= 31) {
+      timer = 30
+      clockCorsa = setInterval(startTimerCorsa, 1000)
     }
+    
+    
     $("#clicks").html(counter);
     $("#mosse").html(mosse);
     $("#punteggio").html(punteggio);
@@ -144,6 +186,7 @@ $(document).ready(function () {
         if (rightCouples.length == 16) {
 
           modal.show()
+          clearInterval(clockCorsa)
           return clearInterval(clock)
 
         }
